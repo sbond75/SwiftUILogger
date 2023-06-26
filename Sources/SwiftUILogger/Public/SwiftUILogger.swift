@@ -4,11 +4,12 @@ import SwiftUI
 open class SwiftUILogger: ObservableObject {
     ///
     public enum Level: Int {
-        case success, info, warning, error, fatal
+        case success, debug, info, warning, error, fatal
         
         var color: Color {
             switch self {
             case .success: return .green
+            case .debug: return Color(UIColor.brown)
             case .info: return .blue
             case .warning: return .yellow
             case .error: return .red
@@ -19,6 +20,7 @@ open class SwiftUILogger: ObservableObject {
         var emoji: Character {
             switch self {
             case .success: return "🟢"
+            case .debug: return "🟤"
             case .info: return "🔵"
             case .warning: return "🟡"
             case .error: return "🔴"
